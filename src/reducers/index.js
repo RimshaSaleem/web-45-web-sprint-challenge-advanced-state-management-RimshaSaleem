@@ -1,5 +1,5 @@
 import {
-    ACTION_FETCH,
+ACTION_FETCH,
  ACTION_SUCCESS,
  ACTION_FAILED, 
  ACTION_ADD, 
@@ -9,7 +9,7 @@ import {
   export const initialState = {
     smurfs: [],
     isLoading: false,
-    error: "Name, position and nickname fields are required.",
+    error: "Must filled out these fields.Name, Position and Nickname fields are required.",
   };
   
   const reducer = (state = initialState, action) => {
