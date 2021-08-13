@@ -1,9 +1,58 @@
-
-export const initialState = {
-}
-
-const reducer = ()=>{
-}
+import {
+    ACTION_FETCH,
+ ACTION_SUCCESS,
+ ACTION_FAILED, 
+ ACTION_ADD, 
+ SET_ACTION_ERROR, 
+  } from "../actions";
+  
+  export const initialState = {
+    smurfs: [],
+    isLoading: false,
+    error: "Name, position and nickname fields are required.",
+  };
+  
+  const reducer = (state = initialState, action) => {
+    switch (action.type) {
+    case ACTION_FETCH:
+    return {
+    ...state,
+    isLoading: true,
+    };
+    case ACTION_SUCCESS:
+    return {
+    ...state,
+    smurfs: action.payload,
+    isLoading: false,
+    };
+    case ACTION_FAILED:
+    return {
+    ...state,
+    };
+    case SET_ACTION_ERROR:
+        return {
+          ...state,
+        };
+    
+    case ACTION_ADD:
+    return {
+    ...state,
+    smurfs: [
+    ...state.smurfs,
+    {
+    name: action.payload.name,
+    nickname: action.payload.nickname,
+    position: action.payload.position,
+    description: action.payload.description,
+    id: state.smurfs.length + 1,
+            },
+          ],
+        };
+        default:
+            return state;
+    }
+  };
+  
 
 //**************DO NOT EDIT ANY CODE BEYOND THIS POINT**************//
 export default reducer;

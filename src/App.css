@@ -40,7 +40,11 @@ section {
   margin:0;
   padding:0;
 }
-
+.navbar-brand {
+  text-align: center !important;
+  font-size: 50px;
+  margin:2%
+}
 
 
 @media (max-width: 800px) {
