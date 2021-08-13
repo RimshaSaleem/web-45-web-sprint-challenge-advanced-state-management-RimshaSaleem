@@ -36,7 +36,6 @@ type: SET_ACTION_ERROR
     }
 }
 export const fetchSmurfs = () => {
-    console.log("test this");
     return (dispatch) => {
       dispatch(actionFetch());
       axios
