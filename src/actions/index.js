@@ -6,20 +6,20 @@ export const ACTION_ADD = 'ACTION_ADD';
 export const SET_ACTION_ERROR = 'SET_ACTION_ERROR'
 
 export const actionFetch = () => {
-  return {
-    type: ACTION_FETCH,
+return {
+type: ACTION_FETCH,
   };
 };
 
 export const actionFailed = () => {
-  return {
-    type: ACTION_FAILED,
+return {
+type: ACTION_FAILED,
   };
 };
 export const actionSuccess = (smurfs) => {
     return {
-      type: ACTION_SUCCESS,
-      payload: smurfs,
+    type: ACTION_SUCCESS,
+    payload: smurfs,
     };
   };
 
@@ -31,8 +31,8 @@ export const addAction = (newSmurf) => {
 };
 
 export const set_action_Error = () => {
-    return {
-        type: SET_ACTION_ERROR
+return {
+type: SET_ACTION_ERROR
     }
 }
 export const fetchSmurfs = () => {
@@ -40,9 +40,11 @@ export const fetchSmurfs = () => {
     return (dispatch) => {
       dispatch(actionFetch());
       axios
-        .get("http://localhost:3333/smurfs")
-        .then((res) => dispatch(actionSuccess(res.data)))
-        .catch((error) => console.log("Error occur in axios", error));
+      .get("http://localhost:3333/smurfs")
+      .then((res) =>
+       dispatch(actionSuccess(res.data)))
+       .catch((error) =>
+        console.log("Error occur in smurf database", error));
     };
   };
 
